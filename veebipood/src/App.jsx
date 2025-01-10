@@ -1,58 +1,59 @@
-import { useState } from 'react'
 import './App.css'
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import NotFound from './pages/NotFound';
 import Avaleht from './pages/Avaleht';
 import Ostukorv from './pages/Ostukorv';
 import Kinkekaart from './pages/Kinkekaart';
-import Esindused from './pages/Esindused';
+import Esindused from './pages/arrays/Esindused';
 import Seaded from './pages/Seaded';
-import LisaToode from './pages/LisaToode';
+import LisaToode from './pages/lisa/LisaToode';
 import Kalkulaator from './pages/Kalkulaator';
+import NavigationBar from './components/NavigationBar';
+import Hinnad from './pages/arrays/Hinnad';
+import Pildid from './pages/arrays/Pildid';
+import Tootajad from './pages/arrays/Tootajad';
+import Tooted from './pages/arrays/Tooted';
+import HaldaEsindused from './pages/halda/HaldaEsindused';
+import HaldaHinnad from './pages/halda/HaldaHinnad';
+import HaldaPildid from './pages/halda/HaldaPildid';
+import HaldaTootajad from './pages/halda/HaldaTootajad';
+import HaldaTooted from './pages/halda/HaldaTooted';
+import LisaEsindus from './pages/lisa/LisaEsindus';
+import LisaHind from './pages/lisa/LisaHind';
+import LisaPilt from './pages/lisa/LisaPilt';
+import LisaTootaja from './pages/lisa/LisaTootaja';
 
 function App() {          // algväärtus ehk refreshi järgne väärtus
- const [count, setCount] = useState(0)
 
   return (
     <>
-      <Link to="/">
-        <img className='pilt' src="https://cuadriciclos.es/wp-content/uploads/2023/07/Nobe-100-1-1-1024x576.jpg" alt="" />
-      </Link>
-
-      <Link to="/ostukorv">
-        <button className='nupp'>Ostukorv</button>
-      </Link>
-
-      <Link to="/osta-kinkekaart">
-        <button className='nupp'>Kinkekaart</button>
-      </Link>
-
-      <Link to="/esindused">
-        <button className='nupp'>Esindused</button>
-      </Link>
-
-      <Link to="/seaded">
-        <button className='nupp'>Seaded</button>
-      </Link>
-
-      <Link to="/lisa-toode">
-        <button className='nupp'>Lisa toode</button>
-      </Link>
-
-      <Link to="/kalkulaator">
-        <button className='nupp'>Kalkulaator</button>
-      </Link>
-
-      <button onClick={() => setCount(count+1)}>Vajuta mind {count}</button>
+      <NavigationBar />
 
       <Routes>
         <Route path="/" element={<Avaleht />} />
         <Route path="/ostukorv" element={<Ostukorv />} />
         <Route path="/osta-kinkekaart" element={<Kinkekaart />} />
-        <Route path="/esindused" element={<Esindused />} />
         <Route path="/seaded" element={<Seaded />} />
-        <Route path="/lisa-toode" element={<LisaToode />} />
         <Route path="/kalkulaator" element={<Kalkulaator />} />
+
+        <Route path="/esindused" element={<Esindused />} />
+        <Route path="/hinnad" element={<Hinnad />} />
+        <Route path="/pildid" element={<Pildid />} />
+        <Route path="/tootajad" element={<Tootajad />} />
+        <Route path="/tooted" element={<Tooted />} />
+
+        <Route path="/halda-esindused" element={<HaldaEsindused />} />
+        <Route path="/halda-hinnad" element={<HaldaHinnad />} />
+        <Route path="/halda-pildid" element={<HaldaPildid />} />
+        <Route path="/halda-tootajad" element={<HaldaTootajad />} />
+        <Route path="/halda-tooted" element={<HaldaTooted />} />
+
+        <Route path="/lisa-esindus" element={<LisaEsindus />} />
+        <Route path="/lisa-hind" element={<LisaHind />} />
+        <Route path="/lisa-pilt" element={<LisaPilt />} />
+        <Route path="/lisa-tootaja" element={<LisaTootaja />} />
+        <Route path="/lisa-toode" element={<LisaToode />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       {/* FOOTER */}

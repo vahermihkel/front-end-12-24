@@ -6,6 +6,10 @@
 
 import { useState } from "react"
 
+// ? : --> ternary operator
+// true/false ? KUI_TRUE : KUI_FALSE
+// lühendatud if/else.
+// if(true/false) { KUI_TRUE } else {KUI_FALSE}
 
 function Kinkekaart() {
   const [summa, setSumma] = useState(20);
@@ -13,9 +17,9 @@ function Kinkekaart() {
   
   return (
     <div>
-      <button onClick={() => setSumma(20)}>20 €</button>
-      <button onClick={() => setSumma(50)}>50 €</button>
-      <button onClick={() => setSumma(100)}>100 €</button>
+      <button className={summa === 20 ? "summa-aktiivne": undefined} onClick={() => setSumma(20)}>20 €</button>
+      <button className={summa === 50 ? "summa-aktiivne": undefined} onClick={() => setSumma(50)}>50 €</button>
+      <button className={summa === 100 ? "summa-aktiivne": undefined} onClick={() => setSumma(100)}>100 €</button>
 
       <br /> <br />
 

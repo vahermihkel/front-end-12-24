@@ -4,10 +4,28 @@ import { useState } from "react"
 // kui on 1 tegevus, siis võiks seda teha otse onClick sees
 // kui on 2+ tegevust, siis võiks tõsta eraldi funktsiooni
 
+// JavaScriptis on 3 tüüpi väärtusi:
+// number -> teha arvutusi, teha võrdusi kas on suurem/väiksem
+//          kogus, kogusumma
+// string (sõna) -> saan funktsioone kasutada .includes(), .endsWith()
+//          isikukood, postiindeks, telefoninumber, maksmisel erinevad staadiumid
+// boolean -> kahendväärus. true/false. "y"/"n". eriomadus: keerata teistpidi hüüumärgi abil
+//          makstud, registreerunud, sisselogitud, täisealine
+
+// array-d --> üks tüüp sees
+// ["Coca", "Fanta", "Sprite"]
+
+// objektid
+// {nimi: "Coca", hind: 99, aktiivne: true}
+
 function Avaleht() {
   const [kogus, setKogus] = useState(0);
   const [sonum, setSonum] = useState("Uuenda kogust!");
   const [laigitud, setLaigitud] = useState(false);
+
+  // Strict-Mode:
+  // topelrenderdus --> HTMLi väljakuvamine/printimine
+  console.log("renderdan");
 
   function nulli() {
     setKogus(0);
@@ -39,8 +57,10 @@ function Avaleht() {
       {kogus > 0 && <button onClick={nulli}>Nulli kogus</button>} 
       <br />
       <button disabled={kogus === 0} onClick={vahenda}>-</button>
-      <span>{kogus}</span>
+      <span className={kogus >= 10 ? "kuldne" : undefined}>{kogus}</span>
       <button onClick={suurenda}>+</button>
+      {/* <button onClick={}>TEST</button> */}
+      {/* <div>{arvutaKogusummaOstukorvis()}</div> */}
     </div>
   )
 }
