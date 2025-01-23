@@ -1,5 +1,6 @@
 import { useState } from "react"
 import hinnadFailist from "../../data/hinnad.json";
+import { Link } from "react-router-dom";
 // ../ --> kausta võrra üles
 
 function Hinnad() {
@@ -13,20 +14,20 @@ function Hinnad() {
 // const abil loon uusi muutujaid/funktsioone, mille sisse panen võrdusmärgiga väärtusi
 
   const filtreeriSuuremKui100 = () => {
-    const vastus = hinnad.filter(hind => hind > 100);
+    const vastus = hinnad.filter(hind => hind.number > 100);
     setHinnad(vastus);
     //setHinnad([245, 673, 310, 486, 531, 192]);
   }
 
   const sorteeriKasvavalt = () => {
-    const vastus = hinnad.toSorted((a, b) => a - b);
+    const vastus = hinnad.toSorted((a, b) => a.number - b.number);
     setHinnad(vastus);
   }
 
   const sorteeriKahanevalt = () => {
     // hinnad.sort((a, b) => b - a); // muteerib ka originaali
     // setHinnad(hinnad.slice()); // .slice() mälukoha kustutamiseks
-    const vastus = hinnad.toSorted((a, b) => b - a);
+    const vastus = hinnad.toSorted((a, b) => b.number - a.number);
     setHinnad(vastus);
   }
 
@@ -47,6 +48,18 @@ function Hinnad() {
   //   setHinnad(hinnad.slice());
   // }
 
+  const arvutaKokku = () => {
+    // kuna käivitatakse kohe, siis siia useState SET panna ei saa -> loopima
+    let summa = 0;
+    // summa = summa + 245;
+    // summa = summa + 673;
+    // summa = summa + 58;
+    // summa = summa + 9;
+
+    hinnad.forEach(hind => summa = summa + hind.number);
+    return summa;
+  }
+
   return (
     <div>
       <button onClick={originaali}>Reset sorteeri ja filtreeri</button>
@@ -54,7 +67,12 @@ function Hinnad() {
       <button onClick={sorteeriKasvavalt}>Sorteeri kasvavalt</button>
       <button onClick={sorteeriKahanevalt}>Sorteeri kahanevalt</button>
       <button onClick={filtreeriSuuremKui100}>Jäta alles suuremad kui 100</button>
-      {hinnad.map(hind => <div key={hind}>{hind}</div>)}
+      {hinnad.map(hind => 
+        <div key={hind.number}>
+          {hind.number}
+          <Link to={"/hind/" + hind.id}><button>Vt lähemalt</button></Link>
+        </div>)}
+      <div>Kokku: {arvutaKokku()}</div>
     </div>
   )
 }

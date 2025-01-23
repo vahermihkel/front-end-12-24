@@ -1,4 +1,5 @@
 import { useState } from "react"
+// import ostukorvFailist from "../data/ostukorv.json"
 
 // Array - mitme väärtuse hoidmiseks [ , , , , ] komaga eraldatud väärtused
 // element - üks väärtus array sees
@@ -16,12 +17,34 @@ import { useState } from "react"
 // rerenderdus --> iga kord kui läheb useState set funktsioon käima
 // renderdamine --> HTMLi väljakuvamine/printimine, koodi näitamine brauseris
 
-function Ostukorv() {             //       0      1          2
-  const [tooted, setTooted] = useState(["Coca", "Fanta", "Sprite"]);
+  // Array localStorage-sse lisamiseks:
+  // 1. võtma localStorage-st vana seis --> localStorage.getItem()
+  // 2. võtma localStorage-st saadud väärtustelt jutumärgid maha --> JSON.parse()
+  // 3. pushima localStorage-sse juurde --> .push()
+  // 4. lisama jutumärgid juurde --> JSON.stringify()
+  // 5. lisama uuenenud ostukorvi localStorage-sse --> localStorage.setItem()
+ 
+
+function Ostukorv() {            
+  const [tooted, setTooted] = useState(JSON.parse(localStorage.getItem("ostukorv")) || []);
 
   const kustuta = (index) => {
     tooted.splice(index,1);
-    setTooted(tooted.slice());
+    setTooted(tooted.slice()); // HTML uuenduseks
+    localStorage.setItem("ostukorv", JSON.stringify(tooted)); // LS uuenduseks
+  }
+
+  const arvutaKokku = () => {
+    let summa = 0;
+    // forEach peab tegema mingi tegevuse (tal endal pole eriomadust, käib lihtsalt läbi)
+    // praegu anname iga tsükli iteratsioon summa muutujale uue väärtuse
+    //summa = 0;
+    //({Nobe, hind: 12} => 12 = 0 + 12);
+    //summa = 12;
+    //({BMW, hind: 51} => 63 = 12  + 51);
+    //summa = 63;
+    tooted.forEach(toode => summa = summa + toode.hind);
+    return summa;
   }
 
   return (
@@ -43,10 +66,12 @@ function Ostukorv() {             //       0      1          2
       } */}
 
       {tooted.map((toode, index) => 
-        <div key={toode}>
-          {index+1}. {toode} 
+        <div key={index}>
+          {index+1}. {toode.nimi} - {toode.hind}€ 
           <button onClick={() => kustuta(index)}>x</button> 
         </div>)}
+
+      {tooted.length > 0 && <div>Kokku: {arvutaKokku()}€</div>}
     </div>
   )
 }

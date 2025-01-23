@@ -1,5 +1,6 @@
 import { useState } from "react";
 import hinnadFailist from "../../data/hinnad.json";
+import { Link } from "react-router-dom";
 
 function HaldaHinnad() {
   const [hinnad, setHinnad] = useState(hinnadFailist);
@@ -7,6 +8,7 @@ function HaldaHinnad() {
   const kustutaHind = (index) => {
     hinnadFailist.splice(index, 1); 
     setHinnad(hinnadFailist.slice());
+    //setHinnad([...hinnadFailist]); <-- koopia tegemiseks
   }
 
   return (
@@ -17,15 +19,19 @@ function HaldaHinnad() {
           <tr>
             <th>Index</th>
             <th>Hind</th>
+            <th>Lisaja</th>
             <th>Kustuta</th>
+            <th>Muuda</th>
           </tr>
         </thead>
         <tbody>
           {hinnad.map((hind, index) => 
-            <tr key={hind}>
+            <tr key={hind.number}>
               <td>{index}</td>
-              <td>{hind} </td>
+              <td>{hind.number} </td>
+              <td>{hind.lisaja} </td>
               <td><button onClick={() => kustutaHind(index)}>x</button></td>
+              <td><Link to={"/muuda-hind/" + index}><button>Muuda</button></Link></td>
             </tr>)}
         </tbody>
       </table>

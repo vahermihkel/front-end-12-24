@@ -28,3 +28,16 @@ createRoot(document.getElementById('root')).render(
 // 3. favicon, font, Firebase üleslaadimine, dünaamiline CSS, componentide väljatõste, kalkulaatorid 
 // 4. Arrays: väljakuvamine, key, sort, filter
 // 5. Arrays: kustutamine (splice), mälukoht (slice), faili tõstmine (.json), lisamine (push)
+// 6. useParams(). ühe võtmine. muutmine. early return HTML
+// 7. objektid - võti-väärtus paarid. .find(). 
+// early return funktsioonis. 
+// 8. Toastify. vormide kontroll onChange abil. localStorage
+// 9. API ---> kodus API failid
+// 10. Viimast korda veebipoodi: tõlked, Bootstrap, MUI, e-maili saatmine
+// ---> kodus ise Webshopi põhi teha
+// 11. Webshopis hakkame tööd tegema
+
+// KOJU:
+// objektideks: pildid. Vt ka lisamine ja muutmine.
+// onClick ja onChange kontrollid. Tooted. Pildid. 
+

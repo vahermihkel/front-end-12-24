@@ -10,6 +10,18 @@ function NavigationBar() {
         <img className='pilt' src="https://cuadriciclos.es/wp-content/uploads/2023/07/Nobe-100-1-1-1024x576.jpg" alt="" />
       </Link>
 
+      <Link to="/api-home">
+        <button className='nupp'>API-d</button>
+      </Link>
+
+      <Link to="/login">
+        <button className='nupp'>Login</button>
+      </Link>
+
+      <Link to="/registreeru">
+        <button className='nupp'>Registreeru</button>
+      </Link>
+
       <Link to="/ostukorv">
         <button className='nupp'>Ostukorv</button>
       </Link>
@@ -74,6 +86,10 @@ function NavigationBar() {
 
       <Link to="/halda-tooted">
         <button className='nupp'>Halda tooted</button>
+      </Link>
+
+      <Link to="/halda-kasutajad">
+        <button className='nupp'>Halda kasutajad</button>
       </Link>
 
       <br /><br />

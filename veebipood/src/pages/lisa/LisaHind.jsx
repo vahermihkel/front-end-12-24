@@ -5,7 +5,11 @@ function LisaHind() {
   const hindRef = useRef();
 
   const lisa = () => {
-    hinnadFailist.push(hindRef.current.value);
+    hinnadFailist.push({
+      "id": hinnadFailist.length+1,
+      "lisaja": "Toomas", 
+      "number": Number(hindRef.current.value)
+    });
     hindRef.current.value = "";
   }
 

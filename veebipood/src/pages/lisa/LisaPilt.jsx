@@ -5,7 +5,11 @@ function LisaPilt() {
   const piltRef = useRef();
 
   const lisa = () => {
-    pildidFailist.push(piltRef.current.value);
+    // const pilt = {url, pealkiri, sisu}
+    pildidFailist.push({
+      "id": pildidFailist.length + 1,
+      "url": piltRef.current.value,
+    });
     piltRef.current.value = "";
   }
 

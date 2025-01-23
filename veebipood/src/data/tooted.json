@@ -1,0 +1,50 @@
+[
+  {
+    "nimi": "Nobe",
+    "hind": 20000,
+    "aktiivne": true,
+    "pilt": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Nobe%2C_GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0061%29.jpg"
+  },
+  {
+    "nimi": "BMW",
+    "hind": 300,
+    "aktiivne": true,
+    "pilt": "https://www.shutterstock.com/image-photo/ufa-russia-september-23-2023-260nw-2413514185.jpg"
+  },
+  {
+    "nimi": "Tesla",
+    "hind": 2000,
+    "aktiivne": true,
+    "pilt": "https://s1.cdn.autoevolution.com/images-webp/news/tesla-cybertruck-gets-rusty-wrap-looks-like-a-barn-find-233588-7.jpg.webp"
+  },
+  {
+    "nimi": "Toyota",
+    "hind": 19750,
+    "aktiivne": true,
+    "pilt": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/1987_Toyota_Corolla_%28AE82%29_CS_sedan_%282015-11-11%29_01.jpg/1024px-1987_Toyota_Corolla_%28AE82%29_CS_sedan_%282015-11-11%29_01.jpg"
+  },
+  {
+    "nimi": "Nissan",
+    "hind": 7433,
+    "aktiivne": true,
+    "pilt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrQapPbR0wccA44dL1IKUMK6jIerUCbA1rxlcjSbbuu4QNuVsqCKiGT3V729UG0ElXQk&usqp=CAU"
+  },
+  {
+    "nimi": "Bentley",
+    "hind": 23500,
+    "aktiivne": true,
+    "pilt": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/2019_Bentley_Flying_Spur_W12_Front.jpg/1280px-2019_Bentley_Flying_Spur_W12_Front.jpg"
+  },
+  {
+    "nimi": "Audi",
+    "hind": 1190,
+    "aktiivne": true,
+    "pilt": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Audi_R8_-_Flickr_-_Alexandre_Pr%C3%A9vot_%28160%29_%28cropped%29.jpg/1920px-Audi_R8_-_Flickr_-_Alexandre_Pr%C3%A9vot_%28160%29_%28cropped%29.jpg"
+  },
+  {
+    "nimi": "Mercedes",
+    "hind": 790,
+    "aktiivne": true,
+    "pilt": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/300scoupe.jpg/800px-300scoupe.jpg"
+  }
+]

@@ -7,9 +7,12 @@ function LisaToode() {
   function sisesta() {
     if (nimiRef.current.value === "") {
       setSonum("Tühja nimega ei saa toodet sisestada!");
-    } else {
-      setSonum("Toode sisestatud!");
-    }
+      return;
+    } 
+    
+    setSonum("Toode sisestatud!"); // pilt URL-st
+    // const toode = {nimi: "Nobe", hind: 20, aktiivne: true, pilt: "http://.jpg"}
+    // .push() faili
   }
 
   return (
