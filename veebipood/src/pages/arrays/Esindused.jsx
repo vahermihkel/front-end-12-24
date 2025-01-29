@@ -1,23 +1,11 @@
-// rfce
-
 import { useState } from "react" // use-d: useState, useRef
 import { Link } from "react-router-dom"; // kõik URL-ga seotud asjad. useParams, useNavigate
 import esindusedFailist from "../../data/esindused.json";
-
-// && ---> kui vasakul on tõsi, siis parempoolne näidatakse
-// === ---> vasak ja parem pool on identsed
-// =   ---> väärtuse andmiseks
-// == ---> seda Reactis ei kasutata, see on identsuse kontroll ilma tüübi kontrollita
-
-// Array peab tegema:
-// 1. kui tuleb andmebaasist
-// 2. kui tahan filtreerimisi/sorteerimisi või muid muudatusi teha
-
-// Array võiks teha:
-// Kui pidevalt pean koguaeg andmeid muutma, sest siis saan kõigile korraga muuta
-// Kui andmeid on palju >10-15
+import { useTranslation } from 'react-i18next';
 
 function Esindused() {
+  const { t } = useTranslation();
+
   //   muutuja --> HTMLi
   //           muutja --> onClick külge
   const [linn, setLinn] = useState("Tallinn");
@@ -88,12 +76,13 @@ function Esindused() {
 
       <br /><br />
 
-      <div>Hetkel aktiivne linn: {linn}</div>
+      <div>{t('currently-active-city')}: {linn}</div>
 
       <br /><br />
       {linn === "Tallinn" && 
         <>
-          <div>Keskuste arv kokku: {keskused.length} tk</div>
+          {keskused.length === 0 && <div>{t('no-shops')}</div>}
+          <div>{t('shops-total-number')}: {keskused.length} tk</div>
           <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
           <button onClick={sorteeriZA}>Sorteeri Z-A</button>
           <button onClick={sorteeriKolmasTahtAZ}>Sorteeri kolmas täht A-Z</button>
@@ -125,3 +114,17 @@ function Esindused() {
 }
 
 export default Esindused
+
+
+// && ---> kui vasakul on tõsi, siis parempoolne näidatakse
+// === ---> vasak ja parem pool on identsed
+// =   ---> väärtuse andmiseks
+// == ---> seda Reactis ei kasutata, see on identsuse kontroll ilma tüübi kontrollita
+
+// Array peab tegema:
+// 1. kui tuleb andmebaasist
+// 2. kui tahan filtreerimisi/sorteerimisi või muid muudatusi teha
+
+// Array võiks teha:
+// Kui pidevalt pean koguaeg andmeid muutma, sest siis saan kõigile korraga muuta
+// Kui andmeid on palju >10-15

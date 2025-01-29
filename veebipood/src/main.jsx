@@ -1,8 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import './i18n';
+import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
+// import {} --> võtab tüki
+// ./ või ../ --> võtab minu failidest
+// kui pole, siis võtab node_module'st
+// kui võtab üle terve rakenduse, siis ei panda "import MUUTUJA FROM"
 
 // Navigeerimiseks on vajalik:
 // 1. alla laadima navigeerimiseks vajaliku koodi
@@ -33,7 +39,7 @@ createRoot(document.getElementById('root')).render(
 // early return funktsioonis. 
 // 8. Toastify. vormide kontroll onChange abil. localStorage
 // 9. API ---> kodus API failid
-// 10. Viimast korda veebipoodi: tõlked, Bootstrap, MUI, e-maili saatmine
+// 10. Viimast korda veebipoodi: tõlked, Bootstrap, MUI, e-maili saatmine, Leaflet
 // ---> kodus ise Webshopi põhi teha
 // 11. Webshopis hakkame tööd tegema
 

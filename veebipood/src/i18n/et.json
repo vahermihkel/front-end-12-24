@@ -1,0 +1,10 @@
+{
+  "currently-active-city": "Hetkel aktiivne linn",
+  "shops-total-number": "Keskuste koguarv",
+  "no-shops": "Hetkel esindused puuduvad",
+  "plural": "d",
+  "nav": {
+    "signup": "Registreeru",
+    "cart": "Ostukorv"
+  }
+}

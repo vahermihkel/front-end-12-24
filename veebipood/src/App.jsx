@@ -48,6 +48,9 @@ import Tarnija2 from './pages/api/Tarnija2';
 import Tarnija3 from './pages/api/Tarnija3';
 import Vocabulary from './pages/api/Vocabulary';
 import ApiHome from './pages/api/ApiHome';
+import AdminHome from './pages/AdminHome';
+import ArraysHome from './pages/arrays/ArraysHome';
+import { ContactUs } from './pages/ContactUs';
 
 function App() {          // algväärtus ehk refreshi järgne väärtus
   const [dark, setDark] = useState(localStorage.getItem("dark") || "false");
@@ -64,9 +67,9 @@ function App() {          // algväärtus ehk refreshi järgne väärtus
 
   return (
     <div className={dark === "true" ? "dark" : undefined}>
+      <NavigationBar />
       <button onClick={darkMode}>Dark</button>
       <button onClick={lightMode}>Light</button>
-      <NavigationBar />
 
       <Routes>
         <Route path="/" element={<Avaleht />} />
@@ -123,6 +126,11 @@ tema peale satun nt Avalehelt või Toodete lehelt: .map() seest */}
         <Route path="/tarnija-3" element={<Tarnija3 />} />
         <Route path="/vocabulary" element={<Vocabulary />} />
         <Route path="/api-home" element={<ApiHome />} />
+        <Route path="/admin" element={<AdminHome />} />
+        <Route path="/arrays" element={<ArraysHome />} />
+
+        <Route path="/contact" element={<ContactUs />} />
+
 
         <Route path="*" element={<NotFound />} />
       </Routes>

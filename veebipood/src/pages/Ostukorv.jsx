@@ -1,4 +1,5 @@
 import { useState } from "react"
+
 // import ostukorvFailist from "../data/ostukorv.json"
 
 // Array - mitme väärtuse hoidmiseks [ , , , , ] komaga eraldatud väärtused
